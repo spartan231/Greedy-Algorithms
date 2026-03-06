@@ -1,0 +1,46 @@
+Name: Howard Miller
+UFID: 58273949
+
+---
+
+## How to Run
+
+No compilation required. The program is written in Python 3.
+
+    python3 src/main.py <input_file>
+
+Example:
+
+    python3 src/main.py data/example.in
+
+To run the test script:
+
+    python3 tests/test_main.py
+
+---
+
+## Input / Output Format
+
+Input file format (all on one line or whitespace-separated):
+
+    k m r1 r2 r3 ... rm
+
+- k : cache capacity (k >= 1)
+- m : number of requests
+- r1..rm : sequence of integer page IDs
+
+Output:
+
+    FIFO  : <misses>
+    LRU   : <misses>
+    OPTFF : <misses>
+
+---
+
+## Assumptions
+
+- Input is well-formed: k >= 1, m >= 0, exactly m page IDs follow.
+- Page IDs are integers (positive, negative, or zero).
+- Tokens may be separated by any whitespace (spaces, newlines, tabs).
+- No compilation step is needed; requires Python 3.6 or later (f-string support).
+- Both algorithms start with an empty cache.
